@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jogo 1</title>
+    <script src="js/functions.js"></script>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body onload="createTable()">
+    <div id="table"></div>
+    <div id="controls">
+        <button onclick="commands(this)" id="0" class="d-pad up">▲</button>
+        <button onclick="commands(this)" id="1" class="d-pad down">▼</button>
+        <button onclick="commands(this)" id="2" class="d-pad left">◄</button>
+        <button onclick="commands(this)" id="3" class="d-pad right">►</button>
+    </div>
+  </body>
+</html>
