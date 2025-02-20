@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+
+    <style>
+        #map {
+            height: 100vh;
+            margin: 0;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="map">
+
+
+    </div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+
+        const pontos = [
+            { lat: -23.55052, lng: -46.633308, descricao: "São Paulo - Centro financeiro do Brasil." },
+            { lat: -22.906847, lng: -43.172896, descricao: "Rio de Janeiro - Cidade Maravilhosa!" },
+            { lat: -15.794229, lng: -47.882166, descricao: "Brasília - Capital do Brasil." },
+            { lat: -30.0277, lng: -51.2287, descricao: "Porto Alegre - Capital do Rio Grande do Sul." },
+            { lat: -3.1190275, lng: -60.0217314, descricao: "Manaus - Portal da Amazônia." }
+        ];
+
+
+        const map = L.map('map').setView([-25.5469, -54.5864], 5);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+        
+        pontos.forEach(ponto => {
+            const marker = L.marker([ponto.lat, ponto.lng]).addTo(map);
+            marker.bindPopup(`<b>${ponto.descricao}</b>`);
+        });
+
+        const group = L.featureGroup(
+            pontos.map(ponto => L.marker([ponto.lat, ponto.lng]))
+        );
+
+        map.fitBounds(group.getBounds());
+
+        group.addTo(map);
+
+    </script>
+
+</body>
+</html>

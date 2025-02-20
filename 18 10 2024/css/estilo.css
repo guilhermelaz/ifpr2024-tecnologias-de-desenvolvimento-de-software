@@ -1,0 +1,92 @@
+body {
+  background: url("https://images.unsplash.com/photo-1724274876097-103bb600debb?q=80&w=2536&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+#tabela {
+  margin: 20px;
+  border-collapse: collapse;
+}
+
+table {
+  border: 5px solid #333;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+td {
+  background: #444;
+  background-image: linear-gradient(to bottom, #666, #444);
+  border: 1px solid #333;
+}
+
+#controle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+button {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: linear-gradient(to bottom, #f0c14b, #e07a1f);
+  border: 3px solid #222;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: all 0.3s;
+  color: #fff;
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+}
+
+button:hover {
+  background: linear-gradient(to bottom, #ffd700, #ff8c00);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+button#run {
+  width: 160px;
+  height: 55px;
+  border-radius: 30px;
+  background: #555;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+button#run:hover {
+  background: #777;
+}
+
+#comandos {
+  color: #fff;
+  font-size: 18px;
+  padding: 10px;
+  border: none;
+  background: rgba(0, 0, 0, 0.7);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+img {
+  display: block;
+  margin: auto;
+  border-radius: 15%;
+}
+
+td.selected {
+  background-color: yellow !important;
+}

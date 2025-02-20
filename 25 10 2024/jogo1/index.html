@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Labirinto</title>
+    <script src="js/funcoes.js"></script>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body onload="criaTabela()">
+
+  <div id="tabela"></div>
+  <div id="controle">
+      <button onclick="comandos(this)" id="0">Esquerda</button>
+      <button onclick="comandos(this)" id="1">Direita</button>
+      <button onclick="comandos(this)" id="2">Acima</button>
+      <button onclick="comandos(this)" id="3">Abaixo</button>
+      <button onclick="run()">Ir</button>
+      <button onclick="buscaPorfundidade()">Busca por profundidade</button>
+      <button onclick="buscaBinaria()">Busca por binária</button>
+  </div>
+  <div id="msg"></div>
+</body>
+</html>

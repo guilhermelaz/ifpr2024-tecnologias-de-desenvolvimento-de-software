@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algoritmo A* - Busca de caminho</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <h1>Algoritmo A* - Busca de caminho</h1>
+    <div id="table"></div>
+
+    <button onclick="startGame()">Iniciar busca</button>
+
+    <!-- Audio Elements -->
+    <audio id="suspense-music" src="suspense.mp3" loop></audio>
+    <audio id="success-sound" src="success.mp3"></audio>
+
+    <!-- Bubble Container -->
+    <div id="bubble-container"></div>
+
+    <script src="script.js"></script>
+    <script>
+        window.onload = createTable;
+    </script>
+</body> 
+</html>

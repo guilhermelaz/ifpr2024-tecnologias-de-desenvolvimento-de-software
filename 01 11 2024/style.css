@@ -1,0 +1,143 @@
+/* Estilo geral da página */
+body {
+    background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364); /* Fundo gradiente épico */
+    color: #ffffff;
+    font-family: 'Trebuchet MS', sans-serif;
+    text-align: center;
+    overflow: hidden;
+    position: relative; /* To position bubbles absolutely within the body */
+}
+
+/* Animação de estrelas no fundo */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://i.imgur.com/6b8Y9a2.png') repeat;
+    animation: animateStars 200s linear infinite;
+    opacity: 0.2;
+    z-index: -1;
+}
+
+@keyframes animateStars {
+    from { background-position: 0 0; }
+    to { background-position: -10000px 5000px; }
+}
+
+h1 {
+    color: #00d4ff;
+    font-size: 32px;
+    text-shadow: 2px 2px 8px #000000;
+    margin-top: 20px;
+}
+
+/* Estilo do botão */
+button {
+    background-color: #00d4ff;
+    color: #000000;
+    border: none;
+    padding: 12px 24px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-bottom: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 212, 255, 0.5);
+}
+
+button:hover {
+    background-color: #00a3cc;
+    transform: scale(1.05);
+}
+
+/* Estilo da tabela */
+table {
+    border-collapse: collapse;
+    margin: 0 auto;
+    box-shadow: 0px 0px 20px #00d4ff;
+}
+
+/* Estilo das células */
+td {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #1f3b4d;
+    background-color: #142831; /* Fundo escuro para contraste */
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+/* Efeito de brilho nas células ao passar */
+td:hover {
+    background-color: #1b4b5a;
+    cursor: pointer;
+}
+
+/* Estilo para o caminho percorrido */
+td[style*="background-color: rgb(255, 228, 181);"] {
+    background-color: #ffc107 !important;
+    box-shadow: 0px 0px 10px #ff8f00;
+}
+
+/* Estilo do peixe */
+#fish {
+    position: relative;
+    z-index: 2;
+    transition: transform 0.3s ease-in-out;
+    filter: drop-shadow(0px 0px 10px #00d4ff);
+}
+
+/* Animação do peixe */
+#fish:hover {
+    transform: scale(1.2) rotate(10deg);
+}
+
+/* Estilo do aquário */
+#bowl {
+    position: relative;
+    z-index: 2;
+    filter: drop-shadow(0px 0px 15px #00d4ff);
+    animation: pulse 2s infinite;
+}
+
+/* Animação pulsante do aquário */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Estilos para as bolhas */
+#bubble-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Allow clicks to pass through */
+    overflow: hidden;
+    z-index: 3;
+}
+
+.bubble {
+    position: absolute;
+    bottom: -100px; /* Start below the visible area */
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 75%;
+    opacity: 0.6;
+    animation: rise 5s infinite;
+}
+
+@keyframes rise {
+    from {
+        transform: translateY(0) scale(1);
+        opacity: 0.6;
+    }
+    to {
+        transform: translateY(-100vh) scale(1.5);
+        opacity: 0;
+    }
+}
