@@ -1,0 +1,17 @@
+CREATE DATABASE captcha;
+
+USE captcha;
+
+CREATE TABLE login_attempts (
+    username VARCHAR(50) NOT NULL,
+    password VARCHAR(100) NOT NULL,
+    attempts INT DEFAULT 0,
+    last_attempt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (username)
+);
+
+INSERT INTO login_attempts (username, password, attempts, last_attempt) VALUES
+    ('Pele', 'rei123', 0, CURRENT_TIMESTAMP),
+    ('Giovanni', 'giovanni456', 0, CURRENT_TIMESTAMP),
+    ('Robinho', 'robinho789', 0, CURRENT_TIMESTAMP),
+    ('Neymar', 'neymar101', 0, CURRENT_TIMESTAMP);
